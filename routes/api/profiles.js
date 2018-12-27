@@ -4,6 +4,6 @@ const express = require("express");
 const router = express.Router();
 //Basically here we are just extractig the Router feature out of the express application
 
-router.get('/test', (req,res) => res.json({msg : 'Hello from profile.js'}));
+router.get('/test', (req,res) => res.json({msg : 'Hello from profiles.js'}));
 
 module.exports = router;
