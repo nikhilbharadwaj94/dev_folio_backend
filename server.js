@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const passport = require("passport");
 
 
 //reference all the required custom files here
@@ -27,6 +28,12 @@ app.get('/', (req, res) => res.send("hello!"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+//adding passport middleware
+app.use(passport.initialize());
+//After initializing the passport package we need to now configure it. For this we will configure the package.
+require("./config/passport")(passport);
+
+
 //For some reason i am setting the use fsunctionality here. I still dont understand the significance though
 //Below its as good as the middleware is adding the /api/xyz prefix while calling the concerned xyz.js files.
 app.use("/api/posts", posts);
@@ -40,3 +47,15 @@ const port = process.env.PORT || 5000;
 
 //Starting the server and listening to the port
 app.listen(port, ()=> console.log(`server has started and is running on port ${port}`));
+
+
+
+
+
+
+
+
+
+
+
+
