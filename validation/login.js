@@ -1,4 +1,4 @@
-//This package is used to validate strings. But one catch is it HAS TO BE A STRING!!
+//validator package is used to validate strings. But one catch is it HAS TO BE A STRING!!
 const validator = require("validator");
 const isEmpty = require("./is-empty");
 
